@@ -13,8 +13,39 @@
 	--numeric_font: 'bein';
 }
 
+#root {
+	font-family: var(--font);
+}
+
 h1 {
     font-family: var(--title_font);
     font-size: 2.5rem;
-    color: var(--dark_blue_text);
+    /* color: var(--dark_blue_text); */
+}
+
+.header-ul > li {
+	color: var(--dark_bg);
+	/* font-family: var(--font); */
+	font-size: 1.5rem;
+	margin: 0 0.2rem;
+}
+
+.header-ul > li:hover {
+	text-decoration: underline;
+}
+
+.landing-main {
+	background-image: url(assets/overlay2.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.glass {
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	width: fit-content;
 }
