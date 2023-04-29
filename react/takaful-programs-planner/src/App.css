@@ -17,6 +17,10 @@
 	font-family: var(--font);
 }
 
+* {
+	box-sizing: border-box;
+}
+
 h1 {
     font-family: var(--title_font);
     font-size: 2.5rem;
