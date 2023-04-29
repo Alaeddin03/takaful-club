@@ -11,7 +11,7 @@ Please go to `static/styles.css` and view the `:root` which defines CSS variable
 - [ ] programs
 - [ ] registration form
 - [ ] post registartion message
-- [ ] login
+- [x] login
 - [ ] driver view
 - [ ] admin view - manage drivers
 - [ ] admin view - manage programs
