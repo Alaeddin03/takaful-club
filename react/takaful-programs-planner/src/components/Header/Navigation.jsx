@@ -5,21 +5,21 @@ import { FaGlobe, FaHome, FaPhoneAlt } from 'react-icons/fa'
 export default function Navigation() {
   return (
     <ul className="header-ul flex items-center gap-6 mx-3">
-        <li>
+      <li>
         <LinkContainer href={"/"} text={"الرئيسية"}>
-            <FaHome fill='var(--dark_bg)' className='w-4' />
+          <FaHome fill='var(--dark_bg)' className='w-4' />
         </LinkContainer>
-        </li>
-        <li>
+      </li>
+      <li>
         <LinkContainer target="_blank" href="https://www.takaful.sa" text={"موقع تكافل"}>
-            <FaGlobe fill='var(--dark_bg)' className='w-4' />
+          <FaGlobe fill='var(--dark_bg)' className='w-4' />
         </LinkContainer>
-        </li>
-        <li>
+      </li>
+      <li>
         <LinkContainer target={"_blank"} href={"https://www.takaful.sa/?p=22"} text={"اتصل بنا"}>
-            <FaPhoneAlt fill='var(--dark_bg)' className='w-4' />
+          <FaPhoneAlt fill='var(--dark_bg)' className='w-4' />
         </LinkContainer>
-        </li>
+      </li>
     </ul>
   )
 }

@@ -5,8 +5,8 @@ export default function TabButton({onClick, $active, children}) {
         <button 
             onClick={onClick}
             className={$active
-            ? 'text-white bg-primary_blue p-2 rounded-md'
-            : 'p-2 rounded-md'
+            ? 'text-white bg-primary_blue p-2 rounded-md transition-colors outline-none'
+            : 'p-2 rounded-md hover:bg-primary_gray focus:bg-primary_gray transition-colors outline-none'
         }>
             {children}
         </button>

@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from '../assets/logo-h.png'
-import Container from './Container'
+import logo from './../../assets/logo-h.png'
+import Container from '../Container'
 
 export default function Header({ children }) {
   return (
