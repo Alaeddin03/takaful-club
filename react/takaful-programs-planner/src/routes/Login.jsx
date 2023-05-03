@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Header from '../components/Header'
-import Navigation from '../components/Navigation'
+import Header from '../components/Header/Header'
+import Navigation from '../components/Header/Navigation'
 import MainContainer from '../components/MainContainer'
 import Glass from '../components/Glass'
 import loginImage from '../assets/login.svg'
-import LoginInput from '../components/LoginInput'
+import LoginInput from '../components/Login/LoginInput'
 import { FiLogIn } from 'react-icons/fi'
 
 export default function Login() {

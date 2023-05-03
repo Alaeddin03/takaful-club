@@ -27,20 +27,6 @@ h1 {
     /* color: var(--dark_blue_text); */
 }
 
-.header-ul > li {
-	color: var(--dark_bg);
-}
-
-.header-ul > li:hover {
-	text-decoration: underline;
-}
-
-.landing-main {
-	background-image: url(assets/overlay2.svg);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 .glass {
 	background: rgba(255, 255, 255, 0.2);
 	border-radius: 16px;
