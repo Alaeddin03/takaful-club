@@ -1,24 +1,29 @@
 import React from 'react'
 import LinkContainer from './LinkContainer'
-import { FaGlobe, FaHome, FaPhoneAlt } from 'react-icons/fa'
+import { FaGlobe, FaHome, FaPhoneAlt, FaTelegramPlane, FaTwitter } from 'react-icons/fa'
 
 export default function Navigation() {
   return (
-    <ul className="header-ul flex items-center gap-6 mx-3">
+    <ul className="flex items-center justify-around gap-8 px-3">
       <li>
-        <LinkContainer href={"/"} text={"الرئيسية"}>
-          <FaHome fill='var(--dark_bg)' className='w-4' />
+        <LinkContainer href={"/"}>
+          <FaHome className='w-6 h-6'/>
         </LinkContainer>
       </li>
       <li>
-        <LinkContainer target="_blank" href="https://www.takaful.sa" text={"موقع تكافل"}>
-          <FaGlobe fill='var(--dark_bg)' className='w-4' />
+        <LinkContainer target={"_blank"} href={"https://www.takaful.sa"}>
+          <FaGlobe className='w-6 h-6' />
         </LinkContainer>
       </li>
       <li>
-        <LinkContainer target={"_blank"} href={"https://www.takaful.sa/?p=22"} text={"اتصل بنا"}>
-          <FaPhoneAlt fill='var(--dark_bg)' className='w-4' />
-        </LinkContainer>
+          <LinkContainer target={'_blank'} href={'https://twitter.com/takafulsa'}>
+            <FaTwitter className='w-6 h-6' />
+          </LinkContainer>
+      </li>
+      <li>
+          <LinkContainer target={'_blank'} href={'https://twitter.com/takafulsa'}>
+            <FaTelegramPlane className='w-6 h-6' />
+          </LinkContainer>
       </li>
     </ul>
   )

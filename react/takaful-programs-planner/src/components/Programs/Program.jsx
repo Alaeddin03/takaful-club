@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Glass from '../Glass'
 import Detail from './Detail'
-import defaultImage from './../../assets/logo-v.png'
+import defaultImage from './../../assets/logo-v.svg'
 
 export default function Program({ program, type }) {
     return (
