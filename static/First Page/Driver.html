@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>صفحة السائق والبرنامج</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="table-design.css">
+    <link rel="stylesheet" href="form-design.css">
+
+
+
+<script src="add.js" defer></script>
+
+
+
+</head>
+<body>
+
+     <!--Table Sections-->
+
+    <main class="table">   <!--First Section-->
+        <section class="table__header" >
+            <h1>السائقين والبرامج</h1>
+
+            <div class="search-about-driver">
+                <input type="search" placeholder="البحث عن سائق">
+            </div>
+            <div class="bu">
+                <div class="Add">
+                <button id="add-btn">&nbsp; إضافة حساب سائق</button></div>
+                </div>
+        </section>
+
+        <section class="table__body"> <!--Second Section-->
+            <table>
+                <thead>
+                    <tr>
+                        <th> اسم السائق <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> الحي المعين <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> اسم البرنامج <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> وقت البرنامج <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>ترتيب<span class="icon-arrow">&UpArrow;</span></th>
+                        <th> حذف \إضافة <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td> أحمد </td>
+                        <td> العزيزية</td>
+                        <td> عمرة </td>
+                        <td> 2:00PM</td>
+                        <td></td>
+                        <td>
+                            <a href=""> <i class="glyphicon glyphicon-edit"></i></a>
+                            <a href=""> <i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td> جمال </td>
+                        <td>الرانوناء</td>
+                        <td> كرة قدم </td>
+                        <td> 2:00PM</td>
+                        <td></td>
+                        <td>
+                            <a href=""> <i class="glyphicon glyphicon-edit"></i></a>
+                            <a href=""> <i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+<!----------------------------------------------------------------------->
+
+<!--Event Data Form-->
+
+    <div class="container">
+        <div class="add">
+            <h2>معلومات السائق والبرنامج</h2>
+            <div class="inputBox">
+                <input type="text" required="required">
+                <i class="fa-sharp fa-solid fa-signature"></i>
+                <span>اسم السائق</span>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" required="required">
+                <i class="fa-solid fa-city"></i>
+                <span>اسم الحي</span>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" required="required">
+                <i class="fa-sharp fa-solid fa-people-group"></i>
+                <span>اسم البرنامج</span>
+            </div>
+
+            <div class="inputBox">
+                <input type="time" required="required">
+                <i class='fas fa-clock'></i>
+                <span>وقت البرنامج</span>
+            </div>
+
+            <div class="inputBox">
+                <input type="submit" value="إضافة حساب">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#A7A1AE;
+    background-color:#5a6378;
+  }
+  
+  h1 {                      /*Heading style*/
+    font-weight: 300;
+    text-align: center;
+    color: lightgreen;
+  }
+
+  .container{
+    padding: 0 10%;
+    margin: 40px auto 0;
+  }
+
+  .student-table {
+    text-align: center;
+    overflow: hidden;
+    width: 60%;
+    margin: 0 auto;
+    display: table;
+  }
+  
+  .student-table th{         /*Header style*/
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: lightgreen;
+    opacity: 6px;
+    background-color: #1F2739;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-left:1%;  
+    /*border style*/
+}
+
+  .student-table tbody tr td{       /*Body style*/
+    font-weight: normal;
+    font-size: 17px;
+    text-align: center;
+    color:#FFFFFF;
+    opacity: 1;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-left:1%;  
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+  }
+
+ .student-table tr:nth-child(odd) {
+    background-color: #323C50;
+  }
+  
+  .student-table tr:nth-child(even) {
+    background-color: #2C3446;
+  }
+  
+  .student-table td:first-child { color: #FB667A; }
+  
+  .student-table tr:hover {
+    background-color: #464A52;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+  }
+  
+  /* .student-table td:hover {
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+  } */
+
+  @media (max-width: 700px){
+      .student-table thead{
+          display: none;
+      }
+.student-table, .student-table tbody, .student-table tr, .student-table td{
+          display: block;
+          width: 100%;
+      }
+      .student-table tr{
+          margin-bottom: 15px;
+      }
+  
+      .student-table tbody tr td{
+          text-align: left;
+          padding-right: 50%;
+          position: relative;
+      }
+  
+      .student-table td:before{
+          content: attr(data-label);
+          position: absolute;
+          width: 50%;
+          font-weight: 600;
+          font-size: 14px;
+          text-align: left;
+          padding-left: 58%;
+      }
+  }

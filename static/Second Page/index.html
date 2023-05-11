@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة البرامج</title>
+    <link rel="stylesheet" href="Event-form-design.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital@1&display=swap" rel="stylesheet">
+
+<script src="addfun.js" defer></script>
+</head>
+
+
+<body>
+
+    <div class="bu">
+        <div class="Add">
+        <button id="add-btn">إضافة برنامج</button></div>
+        </div>
+
+    <!--container-->
+    <div class="container">
+        <div class="add-box">
+            <h1>نموذج إضافة برنامج</h1>
+
+
+            <form action="">
+                <div class="input">
+                    <span class="icon"><i class='bx bxs-image-add' ></i></span>
+                    <img id="image">
+                    <input type="file" accept="image/*" onchange="showPreview(event);">
+                    <label><strong>صورة البرنامج</label></strong>
+                </div>
+
+                <div class="input">
+                    <span class="icon"><i class='bx bxs-rename'></i></i></span>
+                    <input type="text" required>
+                    <label><strong>اسم البرنامج</label></strong>
+                </div>
+
+
+
+                <div class="input">
+                    <span class="icon"><i class='bx bxs-detail'></i></span>
+                    <input type="text" required>
+                    <label><strong>وصف البرنامج</label></strong>
+                </div>
+
+
+
+                <div class="input">
+                    <span class="icon"><i class='bx bxs-calendar'></i></span>
+                    <input type="date" required>
+                    <label><strong>تاريخ البداية</label></strong>
+                </div>
+
+
+                <div class="input">
+                    <span class="icon"><i class='bx bxs-calendar'></i></span>
+                    <input type="date" required>
+                    <label><strong>تاريخ النهاية</label></strong>
+                </div>
+
+
+                <div class="input">
+                    <span class="icon"><i class='bx bxs-group'></i></span>
+                    <input type="number" required>
+                    <label>إقصى حد للمشاركين</label>
+                </div>
+                <button type="submit" class="main-btn"><i class='bx bxs-message-square-add'></i> إضافة</button>
+
+            </form>
+        </div>
+
+        <span class="close-icon">
+           <div class="bx"></div> 
+        </span>
+    </div>
+
+
+</body>
+</html>
