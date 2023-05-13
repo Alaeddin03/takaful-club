@@ -35,3 +35,9 @@ Note that for now, the programs page is using dummy (fake) data. To simulate the
 ```
 npx json-server --watch react/takaful-programs-planner/data/db.json --port 8000
 ```
+
+
+## to-do:
+- convert buttons etc into daisyui
+- add functionality with api
+- add rest of pages
