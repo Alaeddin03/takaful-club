@@ -12,7 +12,8 @@ export default function ProgramsList({ type }) {
     async function fetchPrograms(){
         const res = await fetch(`http://localhost:8000/${type}`);
         const data = await res.json();
-        setPrograms(data);
+        setPrograms(data.programs);
+        // setPrograms(data);
     }
 
   return (
