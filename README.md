@@ -12,10 +12,10 @@ Please go to `static/styles.css` and view the `:root` which defines CSS variable
 - [x] registration form
 - [x] post registartion message
 - [x] login
-- [ ] driver view
-- [ ] admin view - manage drivers
-- [ ] admin view - manage programs
-- [ ] admin view - students in a program
+- [x] driver view
+- [x] admin view - manage drivers
+- [x] admin view - manage programs
+- [x] admin view - students in a program
 
 ## To Run:
 You need to have Node js installed in order to run the page.
