@@ -21,7 +21,7 @@ export default function Navigation() {
           </LinkContainer>
       </li>
       <li>
-          <LinkContainer target={'_blank'} href={'https://twitter.com/takafulsa'}>
+          <LinkContainer target={'_blank'} href={'https://t.me/tkafulsa'}>
             <FaTelegramPlane className='w-6 h-6' />
           </LinkContainer>
       </li>

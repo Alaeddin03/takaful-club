@@ -23,11 +23,11 @@ export default {
           "secondary": "#787878",
           "accent": "#193764",
           "neutral": "#2c2c2c",
-          "base-100": "#434859",
-          "info": "#3ABFF8",
+          "base-100": "#FFFFFF",
+          "info": "#e5e7eb",
           "success": "#36D399",
-          "warning": "#FBBD23",
-          "error": "#F87272",
+          "warning": "#ca8a04",
+          "error": "#7f1d1d",
         }
       }
     ]

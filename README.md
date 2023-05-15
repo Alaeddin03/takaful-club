@@ -9,8 +9,8 @@ Please go to `static/styles.css` and view the `:root` which defines CSS variable
 
 - [x] landing
 - [x] programs
-- [ ] registration form
-- [ ] post registartion message
+- [x] registration form
+- [x] post registartion message
 - [x] login
 - [ ] driver view
 - [ ] admin view - manage drivers

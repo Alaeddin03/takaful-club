@@ -12,6 +12,7 @@ import Driver from './routes/Driver'
 import ProgramForm from './routes/ProgramForm'
 import Staff from './routes/Staff'
 import PostRegistration from './routes/PostRegistration'
+import ProgramStudents from './components/admin/ProgramStudents'
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
       {
         path: '/staff/admin',
         element: <PrivateRoute role={'admin'}><Admin /></PrivateRoute>
+      },
+      {
+        path: '/staff/admin/program/:id',
+        element: <PrivateRoute role={'admin'}><ProgramStudents /></PrivateRoute>
+
       },
       {
         path: '/staff/driver',

@@ -31,8 +31,6 @@ h1 {
 /* khaled's form */
 .container{
     max-width: 650px;
-    padding: 28px;
-    margin: 0 28px;
     /* box-shadow: 0 15px 20px #ABB2B9; */
 }
 .form-h2{
@@ -46,13 +44,12 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px 0;
 }
 .input-box{
     display: flex;
     flex-wrap: wrap;
     width: 50%;
-    padding-bottom: 15px;
+    padding-bottom: 2rem;
 }
 .input-box:nth-child(2n){
     justify-content: end;
@@ -61,7 +58,7 @@ h1 {
     width: 95%;
     /* color: #2f4f4f; */
     font-weight: bold;
-    margin: 5px 0;
+    margin-bottom: 8px;
 }
 .gender-title{
     font-size: 16px;
@@ -140,5 +137,53 @@ h1 {
         display: flex;
         justify-content: space-between;
         width: 60%;
+    }
+}
+
+.driver-table{
+    border-collapse: collapse;
+    /* max-width: 800px; */
+    border: 1px solid #bdc3c7;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2), -1px -1px 8px rgba(0,0,0,0.2);
+}
+
+.driver-table > tbody {
+    /* overflow-x: scroll; */
+}
+
+.driver-table tr{
+    transition: all .2s ease-in;
+    cursor: pointer;
+}
+
+.driver-table th,
+.driver-table td{
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+}
+
+.driver-table #header{
+    background-color: #193764;
+    color: #fff;
+}
+
+.driver-table h1{
+    font-weight: 600;
+    text-align: center;
+    background-color: #193764;
+    color: #fff;
+    padding: 10px 0px;
+}
+
+.driver-table tr:hover{
+    background-color: #f5f5f5;
+    transform: scale(1.02);
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2), -1px -1px 8px rgba(0,0,0,0.2);
+}
+
+
+@media only screen and (max-width: 768px) {
+    table {
+        width: 90%;
     }
 }

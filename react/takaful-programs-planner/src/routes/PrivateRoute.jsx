@@ -7,6 +7,7 @@ export default function PrivateRoute({children, role}) {
     <>
         {
             getItem("role") === role
+            // true
             ? children 
             : <Navigate to='/login' />
         }

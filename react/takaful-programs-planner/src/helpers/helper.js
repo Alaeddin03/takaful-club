@@ -23,10 +23,10 @@ export function logOut() {
 }
 
 
-export function formatDate(dateTime){
+export function formatDate(dateTime, error){
     const date = new Date(dateTime);
     if (isNaN(date.getTime())) {
-        return 'تاريخ غير صالح';
+        return error;
     }
     const dayName = date.toLocaleString('ar-EG', { weekday: 'long' });
     const day = date.getDate();

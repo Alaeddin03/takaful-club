@@ -17,7 +17,7 @@ export default function ProgramsList({ type }) {
     }
 
   return (
-    <div className='flex flex-wrap gap-8 p-8 items-center justify-start max-md:justify-center w-full' dir='rtl'>
+    <div className='flex flex-wrap gap-8 p-8 items-center justify-center max-md:justify-center w-full' dir='rtl'>
         {programs?.map((program) => (
             <div key={program.id}>
                 <Program program={program} type={type}/>

@@ -63,7 +63,7 @@ export default function Login() {
       <CenterMainContainer>
         <div className={'flex items-center justify-center w-full h-full'}>
           <Glass>
-            <div className="py-8 px-8 flex flex-row-reverse items-center justify-around gap-8 w-[50vw] min-w-[280px] max-md:flex-col">
+            <div className="p-8 flex flex-row-reverse items-center justify-around gap-8 w-[50vw] min-w-[280px] max-md:flex-col">
               <div className='w-1/2 p-2 flex items-center justify-center max-md:w-full'>
                 <img src={loginImage} alt="" className='w-32 md:w-52' />
               </div>
@@ -80,7 +80,7 @@ export default function Login() {
                   }
                   <div className='w-full flex items-center justify-center'>
                     <button type='submit'
-                      className='btn btn-outline btn-primary' dir='rtl'>
+                      className='btn btn-  btn-info' dir='rtl'>
                       <div className='ml-2'>
                         تسجيل الدخول
                       </div>

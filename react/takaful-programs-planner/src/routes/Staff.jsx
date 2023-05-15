@@ -12,7 +12,7 @@ export default function Staff() {
     return (
         <div>
             <Header>
-                <LoggedInNav name={name} />
+                <LoggedInNav name={name || 'أدمن'} />
             </Header>
 
             <MainContainer>
