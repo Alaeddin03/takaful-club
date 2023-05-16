@@ -5,6 +5,7 @@ import { HiPlusCircle } from 'react-icons/hi';
 import Modal from '../Modal';
 import ProgramInput from '../Programs/ProgramInput';
 import { getItem } from '../../helpers/helper';
+import Loading from '../Loading';
 
 export default function AdminPrograms() {
 
@@ -23,16 +24,18 @@ export default function AdminPrograms() {
 
     const [loading, setLoading] = useState(false);
 
+    const [isLoadingPrograms, setIsLoadingPrograms] = useState(false);
 
     useEffect(() => {
         fetchPrograms();
     }, [changed])
 
     async function fetchPrograms() {
+        setIsLoadingPrograms(true);
         const res = await fetch(`http://localhost:8000/programs`);
         const data = await res.json();
         setPrograms(data.programs);
-        // setPrograms(data);
+        setIsLoadingPrograms(false);
     }
 
     function handleFileUpload(e) {
@@ -94,62 +97,66 @@ export default function AdminPrograms() {
     return (
         <div>
             <div className='flex flex-wrap gap-8 p-8 items-center justify-center max-md:justify-center w-full' dir='rtl'>
-                <div>
-                    <Modal
-                        modalName={'add-program'}
-                        handleSubmit={handleAddSubmit}
-                        closeModalRef={closeAddModalRef}
-                        submitText={'اضافة'}
-                        isLoading={loading}
-                    >
-                        <div className="form-control w-full max-w-xs gap-6">
+                {isLoadingPrograms ? <Loading loadingData={'البرامج'} /> : (<>
+                    <div>
+                        <Modal
+                            modalName={'add-program'}
+                            handleSubmit={handleAddSubmit}
+                            closeModalRef={closeAddModalRef}
+                            submitText={'اضافة'}
+                            isLoading={loading}
+                        >
+                            <div className="form-control w-full max-w-xs gap-6">
 
-                            <h1 className='text-center text-primary'>
-                                إضافة برنامج جديد
-                            </h1>
+                                <h1 className='text-center text-primary'>
+                                    إضافة برنامج جديد
+                                </h1>
 
-                            <ProgramInput label={'اسم البرنامج'} type={'text'} placeholder={'اسم البرنامج'} maxLength={50} state={programTitle} setState={setProgramTitle} />
+                                <ProgramInput label={'اسم البرنامج'} type={'text'} placeholder={'اسم البرنامج'} maxLength={50} state={programTitle} setState={setProgramTitle} />
 
-                            <ProgramInput label={'وصف البرنامج'} type={'text'} placeholder={'وصف البرنامج'} state={programDescription} setState={setProgramDescription} />
+                                <ProgramInput label={'وصف البرنامج'} type={'text'} placeholder={'وصف البرنامج'} state={programDescription} setState={setProgramDescription} />
 
-                            <ProgramInput label={'تاريخ البرنامج'} type={'datetime-local'} state={programDateTime} setState={setProgramDateTime} />
+                                <ProgramInput label={'تاريخ البرنامج'} type={'datetime-local'} state={programDateTime} setState={setProgramDateTime} />
 
-                            <ProgramInput label={'تاريخ التسجيل'} type={'datetime-local'} state={programRegistrationDeadline} setState={setProgramRegistrationDeadline} />
+                                <ProgramInput label={'تاريخ التسجيل'} type={'datetime-local'} state={programRegistrationDeadline} setState={setProgramRegistrationDeadline} />
 
-                            <ProgramInput label={'حد التسجيل'} type={'text'} pattern={'[0-9]+'} placeholder={'العدد الأقصى من الطلاب'} state={programRegistrationLimit} setState={setProgramRegistrationLimit} />
+                                <ProgramInput label={'حد التسجيل'} type={'text'} pattern={'[0-9]+'} placeholder={'العدد الأقصى من الطلاب'} state={programRegistrationLimit} setState={setProgramRegistrationLimit} />
 
-                            <div >
-                                <label className="label">
-                                    <span className="label-text text-primary">شعار البرنامج</span>
-                                </label>
-                                <input
-                                    onChange={(e) => handleFileUpload(e)}
-                                    type="file"
-                                    className="file-input file-input-bordered file-input-primary w-full max-w-xs"
-                                    dir='ltr' />
-                                <label className="label">
-                                    <span className="label-text-alt text-warning">تحميل الشعار اختياري. في حال عدم التحميل، سيتم استخدام شعار النادي.</span>
-                                </label>
+                                <div >
+                                    <label className="label">
+                                        <span className="label-text text-primary">شعار البرنامج</span>
+                                    </label>
+                                    <input
+                                        onChange={(e) => handleFileUpload(e)}
+                                        type="file"
+                                        className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+                                        dir='ltr' />
+                                    <label className="label">
+                                        <span className="label-text-alt text-warning">تحميل الشعار اختياري. في حال عدم التحميل، سيتم استخدام شعار النادي.</span>
+                                    </label>
+                                </div>
+
                             </div>
+                        </Modal>
 
-                        </div>
-                    </Modal>
 
-                    <label htmlFor={'add-program'} className='cursor-pointer'>
-                        <Glass>
-                            <div className='p-8 flex items-center justify-center text-light_gray h-[624px]' dir='rtl'>
-                                <HiPlusCircle className='w-64 h-64' />
+                        <label htmlFor={'add-program'} className='cursor-pointer'>
+                            <Glass>
+                                <div className='p-8 flex items-center justify-center text-light_gray h-[624px]' dir='rtl'>
+                                    <HiPlusCircle className='w-64 h-64' />
+                                </div>
+                            </Glass>
+                        </label>
+
+                    </div>
+                    {
+                        programs?.map((program) => (
+                            <div key={program.id}>
+                                <Program program={program} type={'admin'} setChanged={setChanged} changed={changed} />
                             </div>
-                        </Glass>
-                    </label>
-
-                </div>
-                {
-                    programs?.map((program) => (
-                        <div key={program.id}>
-                            <Program program={program} type={'admin'} setChanged={setChanged} changed={changed}/>
-                        </div>
-                    ))
+                        ))
+                    }
+                </>)
                 }
             </div >
         </div >

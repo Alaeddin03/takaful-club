@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Glass from '../components/Glass';
 import TabButton from '../components/Programs/TabButton';
 import AdminPrograms from '../components/admin/AdminPrograms';
-import ManageDrivers from '../components/admin/ManageDrivers';
+import ManageTransports from '../components/admin/ManageTransports';
 
 export default function Admin() {
 
@@ -33,14 +33,9 @@ export default function Admin() {
         </Glass>
       </div>
 
-      {/* <div>
-        feedback
-      </div> */}
-
       {isProgramsTab
         ? <AdminPrograms />
-        // ? <ProgramsList type={'current-programs'} />
-        : <ManageDrivers />
+        : <ManageTransports />
       }
     </div>
   )

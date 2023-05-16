@@ -3,6 +3,7 @@ import Glass from '../components/Glass'
 import { formatDate, getItem } from '../helpers/helper';
 import ProgramsSelector from '../components/ProgramsSelector';
 import Table from '../components/Table';
+import Loading from '../components/Loading';
 
 export default function Driver() {
 
@@ -11,6 +12,8 @@ export default function Driver() {
   const [selectedProgramId, setSelectedProgramId] = useState('');
   const [students, setStudents] = useState([]);
   const [neighborhoods, setNeighborhoods] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetchPrograms();
@@ -30,10 +33,10 @@ export default function Driver() {
     });
   }
 
-  async function fetchPrograms() {    
+  async function fetchPrograms() {
     const res = await fetch('http://localhost:8000/programs');
     const data = await res.json();
-    
+
     let currentPrograms = data.programs.filter(program => {
       return new Date(program.dateTime) > new Date().getTime();
     });
@@ -44,14 +47,16 @@ export default function Driver() {
 
   // not done yet
   async function fetchStudents() {
-    if (! selectedProgramId) return;
+    if (!selectedProgramId) return;
+    setIsLoading(true);
+    if (!selectedProgramId) return;
     const res = await fetch(`http://localhost:8000/drivers/${getItem('accountId')}/students`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        role: getItem('role'), 
+        role: getItem('role'),
         programId: selectedProgramId
       }),
     });
@@ -61,6 +66,7 @@ export default function Driver() {
     console.log(data);
     setStudents(data.students);
     setNeighborhoods(data.neighborhoods);
+    setIsLoading(false);
   }
 
   return (
@@ -80,24 +86,20 @@ export default function Driver() {
             }
 
           </div>
-
-          <Table headers={['اسم الطالب', 'الحي', 'رقم الجوال']}>
-            {
-              students?.map((student, index) => (
-                <tr key={student.id}>
-                  <td>{student.name}</td>
-                  <td>{neighborhoods[index].name}</td>
-                  <td>{student.phone}</td>
-                </tr>
-              ))
-            }
-            {/* <tr>
-              <td>----</td>
-              <td>----</td>
-              <td>----</td>
-            </tr> */}
-          </Table>
-
+          {
+            isLoading ? <Loading loadingData={'طلاب البرنامج'} /> :
+              <Table headers={['اسم الطالب', 'الحي', 'رقم الجوال']}>
+                {
+                  students?.map((student, index) => (
+                    <tr key={student.id}>
+                      <td>{student.name}</td>
+                      <td>{neighborhoods[index].name}</td>
+                      <td>{student.phone}</td>
+                    </tr>
+                  ))
+                }
+              </Table>
+          }
         </div>
       </Glass>
     </div>

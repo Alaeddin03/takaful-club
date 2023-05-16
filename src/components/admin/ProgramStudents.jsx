@@ -3,18 +3,21 @@ import { Link, useParams } from 'react-router-dom';
 import Table from '../Table';
 import Glass from '../Glass';
 import { getItem } from '../../helpers/helper';
+import Loading from '../Loading';
 
 export default function ProgramStudents() {
 
   const { id } = useParams();
 
   const [students, setStudents] = useState([]);
+  const [isLoadingStudent, setIsLoadingStudent] = useState(false);
 
   useEffect(() => {
     fetchProgramStudents();
   }, [])
 
   async function fetchProgramStudents() {
+    setIsLoadingStudent(true);
     const res = await fetch(`http://localhost:8000/programs/${id}/students`, {
       method: 'POST',
       headers: {
@@ -28,6 +31,7 @@ export default function ProgramStudents() {
     const data = await res.json();
 
     setStudents(data.students);
+    setIsLoadingStudent(false);
 
   }
 
@@ -49,28 +53,26 @@ export default function ProgramStudents() {
               </div>
 
             </div>
+            {
+              isLoadingStudent ? <Loading loadingData={'طلاب البرنامج'} /> :
 
-            <Table headers={['رقم الهوية', 'اسم الطالب', 'رقم الجوال', 'العمر', 'الجنسية', 'الجنس', 'ملاحظات']}>
-              {
-                students?.map((student, index) => (
-                  <tr key={student.id}>
-                    <td>{student.id}</td>
-                    <td>{student.name}</td>
-                    <td>{student.phone}</td>
-                    <td>{student.age}</td>
-                    <td>{student.nationality}</td>
-                    <td>{student.gender}</td>
-                    <td>{student.notes}</td>
-                  </tr>
-                ))
-              }
-              {/* <tr>
-              <td>----</td>
-              <td>----</td>
-              <td>----</td>
-            </tr> */}
-            </Table>
+                <Table headers={['رقم الهوية', 'اسم الطالب', 'رقم الجوال', 'العمر', 'الجنسية', 'الجنس', 'ملاحظات']}>
+                  {
+                    students?.map((student, index) => (
+                      <tr key={student.id}>
+                        <td>{student.id}</td>
+                        <td>{student.name}</td>
+                        <td>{student.phone}</td>
+                        <td>{student.age}</td>
+                        <td>{student.nationality}</td>
+                        <td>{student.gender}</td>
+                        <td>{student.notes}</td>
+                      </tr>
+                    ))
+                  }
 
+                </Table>
+            }
           </div>
         </Glass>
       </div>

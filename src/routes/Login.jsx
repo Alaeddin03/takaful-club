@@ -29,8 +29,6 @@ export default function Login() {
 
     const data = await res.json();
 
-    console.log(data);
-
     if (data.message) return setError(data.message);
 
     if (data.role === 'admin') {
