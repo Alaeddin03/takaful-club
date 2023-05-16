@@ -10,7 +10,7 @@ After cloning the repo, type the following commands in the terminal:
 npm install
 npm run dev
 ```
-Whenever you need to run it again (other than the first time), just tyoe `npm install`.
+Whenever you need to run it again (other than the first time), just tyoe `npm run dev`.
 
 Note that for the APIs to actually work, you need to run the back end code first. 
 The back end is found [here](https://github.com/Alaeddin03/api.project.web).
