@@ -18,7 +18,6 @@ export default function Driver() {
 
   useEffect(() => {
     changeProgram(selectedProgramId, programs);
-    console.log('selectedProgramId', selectedProgramId);
     fetchStudents();
   }, [selectedProgramId])
 

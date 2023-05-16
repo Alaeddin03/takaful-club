@@ -19,8 +19,6 @@ export default function Login() {
 
     e.preventDefault();
 
-    console.log(`submitted: ${username}, ${password}`);
-
     const res = await fetch('http://localhost:8000/login', {
       method: 'POST',
       headers: {

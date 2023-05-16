@@ -48,7 +48,6 @@ export default function ProgramForm() {
   async function fetchImage(program) {
     if (program.image === 'logo.svg') return setImage(defaultImage);
     const res = await fetch(`http://localhost:8000/static/${program.image}`);
-    console.log('fetching image...')
     const imageBlob = await res.blob();
     const data = URL.createObjectURL(imageBlob);
     setImage(data);
@@ -57,7 +56,6 @@ export default function ProgramForm() {
   async function handleSubmit(e) {
 
     e.preventDefault();
-    console.log('submitting form...')
 
     setLoading(true);
 
