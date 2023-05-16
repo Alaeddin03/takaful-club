@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import Table from '../Table';
 import Glass from '../Glass';
+import { getItem } from '../../helpers/helper';
 
 export default function ProgramStudents() {
 
@@ -20,12 +21,11 @@ export default function ProgramStudents() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        // role: 'admin',
+        role: getItem('role'),
       }),
     })
 
     const data = await res.json();
-    console.log(data);
 
     setStudents(data.students);
 

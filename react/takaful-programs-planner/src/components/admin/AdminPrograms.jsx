@@ -4,12 +4,14 @@ import Glass from '../Glass';
 import { HiPlusCircle } from 'react-icons/hi';
 import Modal from '../Modal';
 import ProgramInput from '../Programs/ProgramInput';
+import { getItem } from '../../helpers/helper';
 
 export default function AdminPrograms() {
 
     const closeAddModalRef = useRef(null);
 
     const [programs, setPrograms] = useState([]);
+    const [changed, setChanged] = useState(false);
 
     const [programTitle, setProgramTitle] = useState('');
     const [programDescription, setProgramDescription] = useState('');
@@ -24,7 +26,7 @@ export default function AdminPrograms() {
 
     useEffect(() => {
         fetchPrograms();
-    }, [])
+    }, [changed])
 
     async function fetchPrograms() {
         const res = await fetch(`http://localhost:8000/programs`);
@@ -51,6 +53,7 @@ export default function AdminPrograms() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+                role: getItem('role'),
                 program: {
                     title: programTitle,
                     description: programDescription,
@@ -84,6 +87,7 @@ export default function AdminPrograms() {
         setProgramImage('');
         setProgramImageName('logo.svg');
         setLoading(false);
+        setChanged(!changed);
         closeAddModalRef.current.click();
     }
 
@@ -143,7 +147,7 @@ export default function AdminPrograms() {
                 {
                     programs?.map((program) => (
                         <div key={program.id}>
-                            <Program program={program} type={'admin'} />
+                            <Program program={program} type={'admin'} setChanged={setChanged} changed={changed}/>
                         </div>
                     ))
                 }

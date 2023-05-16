@@ -7,8 +7,9 @@ import { CiEdit } from 'react-icons/ci'
 import { FaTrash } from 'react-icons/fa'
 import Modal from '../Modal'
 import ProgramInput from './ProgramInput'
+import { getItem } from '../../helpers/helper'
 
-export default function Program({ program, type }) {
+export default function Program({ program, type, setChanged, changed }) {
 
     const closeEditModalRef = useRef(null);
     const closeDeleteModalRef = useRef(null);
@@ -47,6 +48,7 @@ export default function Program({ program, type }) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+                role: getItem('role'),
                 program: {
                     title: programTitle,
                     description: programDescription,
@@ -61,6 +63,7 @@ export default function Program({ program, type }) {
         console.log(data);
 
         setIsEditLoading(false);
+        setChanged(!changed);
 
         closeEditModalRef.current.click()
     }
@@ -72,11 +75,18 @@ export default function Program({ program, type }) {
 
         const res = await fetch(`http://localhost:8000/programs/${program.id}`, {
             method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                role: getItem('role'),
+            }),
         })
         const data = await res.json();
         console.log(data);
 
         setIsDeleteLoading(false);
+        setChanged(!changed);
         closeDeleteModalRef.current.click()
     }
 
