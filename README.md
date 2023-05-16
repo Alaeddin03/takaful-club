@@ -1,5 +1,5 @@
 # Takaful Club
-This repositery contains the front end to the takful club project.
+This repositery contains the front end to the takaful club project.
 
 ## To Run:
 You need to have Node js installed in order to run the page.
