@@ -1,6 +1,7 @@
 # Takaful Club
 This repositery contains the front end to the takaful club project.
 
+
 ## To Run:
 You need to have Node js installed in order to run the page.
 
@@ -12,7 +13,7 @@ npm run dev
 Whenever you need to run it again (other than the first time), just tyoe `npm install`.
 
 Note that for the APIs to actually work, you need to run the back end code first. 
-The back end is found [here](https://github.com/Alaeddin03/api.project.web)
+The back end is found [here](https://github.com/Alaeddin03/api.project.web).
 
 Then naviagte to `http://localhost:5173/`.
 
