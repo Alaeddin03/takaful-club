@@ -1,43 +1,34 @@
-## Work distribution:
+## Takaful Club
+This repositery contains the front end to the takful club project.
 
-Khaled and Mohammed can upload HTML, CSS, and JS files into static.
-Alaa will integrate their work into react.
-
-Please go to `static/styles.css` and view the `:root` which defines CSS variables. The variables are used so that we can change the styles in one place if we want to instead of changing multiple places. An example of how to use the variables is provided in the same file for `h1`.
-
-## Required Pages:
-
-- [x] landing
-- [x] programs
-- [x] registration form
-- [x] post registartion message
-- [x] login
-- [x] driver view
-- [x] admin view - manage drivers
-- [x] admin view - manage programs
-- [x] admin view - students in a program
-
-## To Run:
+### To Run:
 You need to have Node js installed in order to run the page.
 
 After cloning the repo, type the following commands in the terminal:
 ```
-cd react
-cd takaful-programs-planner
 npm install
 npm run dev
 ```
-The commands above are for the first time only. Later, you don't need to type `npm install`.
+Whenever you need to run it again (other than the first time), just tyoe `npm install`.
 
-Then open `http://localhost:5173/`.
+Note that for the APIs to actually work, you need to run the back end code first. 
+The back end is found [here](https://github.com/Alaeddin03/api.project.web)
 
-Note that for now, the programs page is using dummy (fake) data. To simulate the back end, type the following in another terminal:
-```
-npx json-server --watch react/takaful-programs-planner/data/db.json --port 8000
-```
+Then naviagte to `http://localhost:5173/`.
 
 
-## to-do:
-- convert buttons etc into daisyui
-- add functionality with api
-- add rest of pages
+### Technologies Used:
+This is a `React JS` project created by `vite`. We utilize `react router` to create the routes and link the components. For the styles, we used `CSS`, `tailwind`, and `daisyUI`. All icons used are copyright free and their sources are listed below.
+
+
+### Resources:
+- [React Icons](https://react-icons.github.io/react-icons)
+- [SVG Repo](https://www.svgrepo.com/)
+- [BG Jar](https://bgjar.com/)
+- [takaful](https://www.takaful.sa)
+
+
+### Docs:
+- [Vite](https://vitejs.dev/guide)
+- [React](https://react.dev/learn)
+- [React Router](https://reactrouter.com/en/main/start/overview)
