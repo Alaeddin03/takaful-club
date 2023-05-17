@@ -3,6 +3,9 @@ This repositery contains the front end to the takaful club project.
 
 
 ## To Run:
+
+You can access the fornt at [takaful-club](https://takaful-club.netlify.app/programs), however, you need to run the [backend](https://github.com/Alaeddin03/api.project.web) on your localhost since it is not deployed to a server yet.
+
 You need to have Node js installed in order to run the page.
 
 After cloning the repo, type the following commands in the terminal:
