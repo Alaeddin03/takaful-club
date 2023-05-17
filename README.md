@@ -2,7 +2,7 @@
 This repositery contains the front end to the takaful club project.
 
 
-You can access the fornt at [takaful-club](https://takaful-club.netlify.app/programs), however, you need to run the [backend](https://github.com/Alaeddin03/api.project.web) on your localhost since it is not deployed to a server yet.
+You can access the site at [takaful-club](https://takaful-club.netlify.app/programs), however, you need to run the [backend](https://github.com/Alaeddin03/api.project.web) on your localhost since it is not deployed to a server yet.
 
 ## To Run Locally:
 
