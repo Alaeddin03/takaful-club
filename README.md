@@ -1,5 +1,5 @@
 # Takaful Club
-This repositery contains the front end to the takaful club project.
+This repository contains the front end to the takaful club project.
 
 
 You can access the site at [takaful-club](https://takaful-club.netlify.app/programs), however, you need to run the [backend](https://github.com/Alaeddin03/api.project.web) on your localhost since it is not deployed to a server yet.
